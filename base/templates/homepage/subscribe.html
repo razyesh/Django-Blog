@@ -1,0 +1,14 @@
+{% block content %}
+<h3>Newsletter</h3>
+{% if messages %}
+{% for message in messages %}
+    <p class="btn btn-success"> {{message}}</p>
+{% endfor %}
+{% endif %}
+<form method="post" action=" ">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Subscribe</button>
+</form>
+
+{% endblock %}

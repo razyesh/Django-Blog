@@ -1,0 +1,516 @@
+{% extends 'homepage/index.html' %}
+{% load static %}
+{% block content %}
+
+					<!-- BEGIN .portus-main-content-panel -->
+					<div class="paragraph-row portus-main-content-panel">
+						<div class="column12">
+							<div class="portus-main-content-s-block">
+
+								<aside class="sidebar portus-sidebar-small">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>Nepal</h3>
+											<div class="w-article-list-num">
+												{% for post in category_nepal%}
+												<div class="item">
+														<div class="item-header">
+																<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
+															</div>
+													<span class="item-num">01</span>
+													<div class="item-content">
+														
+														<h4><a href="{% url 'post-detail' post.slug %}">{{post.title}}</a>
+														<div class="item-meta">
+															<a href="{% url 'post-detail' post.slug %}"><i class="po po-clock"></i>{{post.datetime}}</a>
+														</div>
+														<p></p>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+									</div>
+								</aside>
+
+								<aside class="sidebar portus-sidebar-small">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>Automobile</h3>
+											<div class="w-article-list">
+												{% for category in category_automobile %}
+												<div class="item">
+													<div class="item-header">
+														<a href="post.html"><img src="{{category.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<div class="item-categories">
+															<a href="blog.html" data-ot-css="color: #f37326;">{{category.category}}</a>
+														</div>
+														<h4><a href="post.html">{{category.title}}</a></h4>
+													</div>
+												</div>
+												{% endfor %}
+												
+												
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<div class="do-space">
+												<a href="#" target="_blank"><img src="{% static 'images/pob-2.jpg' %}" alt=""></a>
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+									</div>
+								</aside>
+
+								<!-- BEGIN .portus-main-content -->
+								<div class="portus-main-content portus-main-content-s-2">
+									<div class="theiaStickySidebar">
+										
+										<!-- BEGIN .portus-content-block -->
+										<div class="portus-content-block">
+											
+											<div class="article-grid-default">
+												
+												<div class="article-grid-layout-2">
+															<div class="row">
+																<div class="leftcolumn">
+																	  <div class="card">
+																		
+																		<h2>{{object.title}}</h2><br>
+																		<div class="fb-like" data-href="http://127.0.0.1:8000/lenovo-foldable-pc/{{object.id}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div><br>
+																		<h5>{{object.datetime}}</h5><br>
+																		
+																		<p>{{object.content|safe}}</p>
+																	  </div>
+																	</div>
+																	<div class="fb-comments" data-href="http://127.0.0.1:8000/redmi-note7-pro-price-in-nepal/{{object.id}}" data-width="" data-numposts="5"></div>
+															</div>
+															
+														</div>
+														</div>
+														</div>
+											</div>
+										<!-- BEGIN .portus-content-block -->
+										</div>
+									</div>
+								<!-- END .portus-main-content -->
+								</div>
+							</div>
+						</div>
+					<!-- ENd .portus-main-content-panel -->
+					
+					</div>
+					<!-- BEGIN .portus-main-content-panel -->
+					<div class="container">
+					<div class="paragraph-row portus-main-content-panel">
+						<div class="column12">
+							<div class="portus-main-content-s-block">
+								<!-- BEGIN .portus-main-content -->
+								<div class="portus-main-content">
+									<div class="theiaStickySidebar">	
+										<!-- BEGIN .portus-content-block -->
+										<div class="portus-content-block">
+											<div class="portus-content-title">
+												<h2>Mobbiles</h2>
+												<a href="blog.html" class="right set-this-dotted">View more articles</a>
+											</div>
+											<div class="article-blog-default">
+												{% for post in category_mobbiles %}
+
+												<div class="item">
+													<div class="item-header item-header-hover">
+														<div class="item-header-hover-buttons">
+															<span data-hover-text-me="Read This Article"><a href="post.html" class="fa fa-mail-reply"></a></span>
+															<span data-hover-text-me="Add to Read Later"><a href="#" class="fa fa-plus"></a></span>
+														</div>
+														<a href="post.html"><img src="{{post.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<h3><a href="post.html">{{post.title}}</a></h3>
+														<div class="item-meta">
+															<a href="blog.html" class="item-meta-i"><i class="po po-head"></i>{{post.author}}</a>
+															<span class="item-meta-i"><i class="po po-clock"></i>{{post.datetime}}</span>
+
+														</div>
+														<p>{{post.meta_content}}</p>
+														<div class="item-helper-a">
+															<a href="post.html" class="button-alt button-alt-frame"><i class="fa fa-reply"></i>Read more</a>
+															<a href="#" class="button-alt"><i class="fa fa-plus-circle"></i>Read later</a>
+														</div>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+										<!-- BEGIN .portus-content-block -->
+										</div>
+
+									</div>
+								<!-- END .portus-main-content -->
+								</div>
+
+								<aside class="sidebar portus-sidebar-small">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>PC/Laptops</h3>
+											<div class="w-article-list">
+												{% for post in category_computers %}
+												<div class="item">
+													<div class="item-header">
+														<a href="post.html"><img src="{{post.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<div class="item-categories">
+															<a href="category.html" data-ot-css="color: #f37326;">{{post.category}}</a>
+														</div>
+														<h4><a href="post.html">{{post.meta_content}}</a><a href="post.html#comments" class="post-title-comment"><i class="po po-portus"></i>193</a></h4>
+													</div>
+												</div>
+												{% endfor %}
+										<!-- END .widget -->
+										</div>
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<div class="do-space">
+												<a href="#" target="_blank"><img src="images/pob-2.jpg" alt="" /></a>
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+									</div>
+								</aside>
+
+								<aside class="sidebar portus-sidebar-large">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>Gadget Reviews</h3>
+											<div class="w-review-articles">
+												{% for post in category_gadget_review %}
+												<div class="item item-large">
+													<div class="item-header item-header-hover">
+														<div class="item-header-hover-buttons">
+															<span data-hover-text-me="Read This Article"><a href="post.html" class="fa fa-mail-reply"></a></span>
+															<span data-hover-text-me="Add to Read Later"><a href="post.html#comments" class="fa fa-plus"></a></span>
+														</div>
+														<a href="post.html"><img src="{{post.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<h4><a href="post.html">{{post.title}}</a><a href="post.html#comments" class="post-title-comment"></h4>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+											<a href="blog.html" class="widget-view-more">View more articles</a>
+
+										<!-- END .widget -->
+										</div>
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<div class="do-space">
+												<a href="#" target="_blank"><img src="images/pob-3.jpg" alt="" /></a>
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+									
+
+										
+										
+									</div>
+								</aside>
+
+							</div>
+						</div>
+					<!-- ENd .portus-main-content-panel -->
+					</div>
+
+					
+
+					<!-- BEGIN .portus-main-content-panel -->
+					<div class="paragraph-row portus-main-content-panel">
+						<div class="column12">
+							<div class="portus-content-title">
+								<h2>Latest movies trailers</h2>
+								<a href="blog.html" class="right set-this-dotted">view more videos</a>
+							</div>
+							<div class="portus-video-slider-min owl-carousel">
+
+								<div class="item">
+									<a href="post-video.html" class="item-photo">
+										<i class="fa fa-play"></i>
+										<img src="../../i.ytimg.com/vi/JVxe5NIABsI/mqdefault.jpg" alt="" />
+										<span>Ullum fabellas accommodare pro veniam ponderum</span>
+									</a>
+								</div>
+
+							</div>
+						</div>
+					<!-- ENd .portus-main-content-panel -->
+					</div>
+
+				<!-- END .wrapper -->
+				</div>
+				
+			<!-- BEGIN #content -->
+			</div>
+			{% endblock %}
+		
+			
+			<!-- BEGIN #footer -->
+			<div id="footer">
+
+				<div id="footer-widgets">
+					<div class="wrapper">
+
+						<div class="paragraph-row">
+							<div class="column12">
+								<!-- BEGIN .widget -->
+								<div class="widget">
+
+									<div class="do-space do-space-bg">
+										<a href="#" target="_blank"><img src="images/pob-1.jpg" alt="" /></a>
+										<strong>Sponsored advertisement</strong>
+									</div>
+
+								<!-- END .widget -->
+								</div>
+							</div>
+						</div>
+
+						<div class="paragraph-row">
+
+							<div class="column3">
+								<div class="widget">
+									<div>
+										<p><img src="images/footer-logo.png" data-ot-retina="images/footer-logo@2x.png" alt="" /></p>
+										<p>Est ut minim postea necessitatibus.</p>
+										<p>Decore eligendi at nec. Vel ea quem persius eleifend, est ne appetere molestiae, est ut minim postea necessitatibus.</p>
+										<div class="short-icon-text">
+											<i class="fa fa-phone"></i>
+											<span>+44 1387 255794</span>
+										</div>
+										<div class="short-icon-text">
+											<i class="fa fa-location-arrow"></i>
+											<span>Riga, Latvia</span>
+										</div>
+										<div class="short-icon-text">
+											<i class="fa fa-envelope"></i>
+											<span>portus@theme.me</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="paragraph-row">
+
+									<div class="column3">
+										<div class="widget">
+											<div>
+												<p><img src="images/footer-logo.png" data-ot-retina="images/footer-logo@2x.png" alt="" /></p>
+												<p>Contact Detail</p>
+											
+												<div class="short-icon-text">
+													<i class="fa fa-phone"></i>
+													<span>9860476499</span>
+												</div>
+												<div class="short-icon-text">
+													<i class="fa fa-location-arrow"></i>
+													<span>Kathmandu, Nepal</span>
+												</div>
+												<div class="short-icon-text">
+													<i class="fa fa-envelope"></i>
+													<span>pudasainirajesh504@gmail.com</span>
+												</div>
+											</div>
+										</div>
+									</div>
+		
+									<div class="column3">
+										<div class="widget">
+											<h3>Jobs Post</h3>
+											{% for post in category_jobs%}
+											<div class="w-article-list w-article-list-small">
+		
+												<div class="item">
+													<div class="item-header">
+														<a href="post.html">
+															<img src="{{post.image.url}}" alt="" data-ot-retina="">
+														</a>
+													</div>
+													
+													<div class="item-content">
+														<h4><a href="post.html">{{post.title}}</a></h4>
+														<span class="item-meta">
+															<a href="blog.html" class="item-meta-i"><i class="po po-clock"></i>{{post.datetime}}</a>
+														</span>
+													</div>
+												</div>
+												{% endfor %}
+		
+											</div>
+											<a href="blog.html" class="widget-view-more">View more articles</a>
+										</div>
+									</div>
+		
+		
+								</div>
+
+						</div>
+
+					</div>
+				</div>
+				
+			<!-- END #footer -->
+			</div>
+		</div>>
+	</div>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="{% static 'jscript/jquery-latest.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/bootstrap.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/owl.carousel.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/theia-sticky-sidebar.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/parallax.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/modernizr.custom.50878.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/iscroll.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/dat-menu.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/theme-scripts.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'jscript/ot-lightbox.min.js' %}"></script>
+		<!-- Demo Only -->
+		<script type="text/javascript" src="{% static 'jscript/_ot-demo.min.js' %}"></script>
+		<script>
+			// Animation time of revieling and hiding menu (defaut = 400)
+			var _datMenuAnim = 400;
+			// Animation effect for now it is just 1 (defaut = "effect-1")
+			var _datMenuEffect = "effect-2";
+			// Submenu dropdown animation (defaut = true)
+			var _datMenuSublist = true;
+			// If fixed header is showing (defaut = true)
+			var _datMenuHeader = true;
+			// Header Title
+			var _datMenuHeaderTitle = 'Portus';
+			// If search is showing in header (defaut = true)
+			var _datMenuSearch = true;
+			// Search icon (FontAwesome) in header (defaut = fa-search)
+			var _datMenuCustomS = "fa-search";
+			// Menu icon (FontAwesome) in header (defaut = fa-bars)
+			var _datMenuCustomM = "fa-bars";
+		</script>
+
+		<script>
+			jQuery('.portus-article-slider-min').owlCarousel({
+				loop: true,
+				margin: 22,
+				responsiveClass: true,
+				responsive:{
+					0:{
+						items: 1,
+						nav: true
+					},
+					600:{
+						items: 3,
+						nav: false
+					},
+					1000:{
+						items: 5,
+						nav: true,
+						loop: false
+					}
+				}
+			});
+
+			jQuery('.portus-video-slider-min').owlCarousel({
+				loop: true,
+				margin: 22,
+				responsiveClass: true,
+				responsive:{
+					0:{
+						items: 1,
+						nav: true
+					},
+					600:{
+						items: 2,
+						nav: false
+					},
+					1000:{
+						items: 4,
+						nav: true,
+						loop: false
+					}
+				}
+			});
+
+			jQuery('.portus-article-slider-big').owlCarousel({
+				loop: true,
+				margin: 0,
+				responsiveClass: true,
+				responsive:{
+					0:{
+						items: 1,
+						nav: false
+					},
+					650:{
+						items: 2,
+						nav: false
+					},
+					1000:{
+						items: 2,
+						nav: true,
+						loop: false
+					}
+				}
+			});
+
+			jQuery('.article-slider-full-small').owlCarousel({
+				loop: true,
+				margin: 20,
+				responsiveClass: true,
+				items: 1,
+				nav: true,
+				loop: false
+			});
+
+			jQuery('.w-gallery-slider .item-header').owlCarousel({
+				loop: true,
+				margin: 20,
+				responsiveClass: true,
+				items: 1,
+				nav: true,
+				loop: false
+			});
+		</script>
+
+	<!-- END body -->
+	</body>
+<!-- END html -->
+
+
+</html>
