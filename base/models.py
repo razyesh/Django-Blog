@@ -19,7 +19,7 @@ class Post(models.Model):
     content = RichTextUploadingField()
     meta_content = models.CharField(max_length=200)
     author = models.ForeignKey(User, related_name='post', on_delete= models.CASCADE)
-    image = models.ImageField(default='home/images/default.png', upload_to = 'home/images')
+    image = models.ImageField(default='home/images/default.png')
     publish = models.BooleanField(default=True)
     datetime = models.DateTimeField(auto_now_add=True)
 
@@ -42,7 +42,7 @@ class Videos(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     video = RichTextUploadingField()
-    thumbnail = models.ImageField(upload_to='video/images', default='home/images/default.png')
+    thumbnail = models.ImageField(default='home/images/default.png')
     publish = models.BooleanField(default=True)
     datetime = models.DateTimeField(auto_now = True)
 
