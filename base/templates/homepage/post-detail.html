@@ -218,10 +218,10 @@
 															<span data-hover-text-me="Read This Article"><a href="post.html" class="fa fa-mail-reply"></a></span>
 															<span data-hover-text-me="Add to Read Later"><a href="post.html#comments" class="fa fa-plus"></a></span>
 														</div>
-														<a href="post.html"><img src="{{post.image.url}}" alt="" /></a>
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
 													</div>
 													<div class="item-content">
-														<h4><a href="post.html">{{post.title}}</a><a href="post.html#comments" class="post-title-comment"></h4>
+														<h4><a href="{% url 'post-detail' post.slug %}">{{post.title}}</a><a href="post.html#comments" class="post-title-comment"></h4>
 													</div>
 												</div>
 												{% endfor %}
