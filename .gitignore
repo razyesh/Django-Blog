@@ -2,5 +2,4 @@
 *.pyc
 db.sqlite3
 blog
-media
 .vscode
