@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&2-78x%*m=blfk8#s9#8j&t@b*#n1idoa2pow)l$x-hu36da)j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://razyeshblog.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -124,10 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_DIRS = {
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
-}
+# STATIC_DIRS = {
+#     os.path.join(BASE_DIR, "static"),
+#     '/var/www/static/',
+# }
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
