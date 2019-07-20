@@ -47,16 +47,16 @@
 
 											<h3>Automobile</h3>
 											<div class="w-article-list">
-												{% for category in category_automobile %}
+												{% for post in category_automobile %}
 												<div class="item">
 													<div class="item-header">
-														<a href="post.html"><img src="{{category.image.url}}" alt="" /></a>
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{category.image.url}}" alt="" /></a>
 													</div>
 													<div class="item-content">
 														<div class="item-categories">
-															<a href="blog.html" data-ot-css="color: #f37326;">{{category.category}}</a>
+															<a href="{% url 'post-detail' post.slug %}" data-ot-css="color: #f37326;">{{category.category}}</a>
 														</div>
-														<h4><a href="post.html">{{category.title}}</a></h4>
+														<h4><a href="{% url 'post-detail' post.slug %}">{{category.title}}</a></h4>
 													</div>
 												</div>
 												{% endfor %}
@@ -138,21 +138,21 @@
 												<div class="item">
 													<div class="item-header item-header-hover">
 														<div class="item-header-hover-buttons">
-															<span data-hover-text-me="Read This Article"><a href="post.html" class="fa fa-mail-reply"></a></span>
+															<span data-hover-text-me="Read This Article"><a href="{% url 'post-detail' post.slug %}" class="fa fa-mail-reply"></a></span>
 															<span data-hover-text-me="Add to Read Later"><a href="#" class="fa fa-plus"></a></span>
 														</div>
-														<a href="post.html"><img src="{{post.image.url}}" alt="" /></a>
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
 													</div>
 													<div class="item-content">
 														<h3><a href="post.html">{{post.title}}</a></h3>
 														<div class="item-meta">
-															<a href="blog.html" class="item-meta-i"><i class="po po-head"></i>{{post.author}}</a>
+															<a href="#" class="item-meta-i"><i class="po po-head"></i>{{post.author}}</a>
 															<span class="item-meta-i"><i class="po po-clock"></i>{{post.datetime}}</span>
 
 														</div>
 														<p>{{post.meta_content}}</p>
 														<div class="item-helper-a">
-															<a href="post.html" class="button-alt button-alt-frame"><i class="fa fa-reply"></i>Read more</a>
+															<a href="#" class="button-alt button-alt-frame"><i class="fa fa-reply"></i>Read more</a>
 															<a href="#" class="button-alt"><i class="fa fa-plus-circle"></i>Read later</a>
 														</div>
 													</div>
@@ -177,13 +177,13 @@
 												{% for post in category_computers %}
 												<div class="item">
 													<div class="item-header">
-														<a href="post.html"><img src="{{post.image.url}}" alt="" /></a>
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
 													</div>
 													<div class="item-content">
 														<div class="item-categories">
-															<a href="category.html" data-ot-css="color: #f37326;">{{post.category}}</a>
+															<a href="#" data-ot-css="color: #f37326;">{{post.category}}</a>
 														</div>
-														<h4><a href="post.html">{{post.meta_content}}</a><a href="post.html#comments" class="post-title-comment"><i class="po po-portus"></i>193</a></h4>
+														<h4><a href="{% url 'post-detail' post.slug %}">{{post.meta_content}}</a><a href="post.html#comments" class="post-title-comment"><i class="po po-portus"></i>193</a></h4>
 													</div>
 												</div>
 												{% endfor %}
