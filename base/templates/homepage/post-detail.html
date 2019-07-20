@@ -50,13 +50,13 @@
 												{% for post in category_automobile %}
 												<div class="item">
 													<div class="item-header">
-														<a href="{% url 'post-detail' post.slug %}"><img src="{{category.image.url}}" alt="" /></a>
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
 													</div>
 													<div class="item-content">
 														<div class="item-categories">
-															<a href="{% url 'post-detail' post.slug %}" data-ot-css="color: #f37326;">{{category.category}}</a>
+															<a href="{% url 'post-detail' post.slug %}" data-ot-css="color: #f37326;">{{post.category}}</a>
 														</div>
-														<h4><a href="{% url 'post-detail' post.slug %}">{{category.title}}</a></h4>
+														<h4><a href="{% url 'post-detail' post.slug %}">{{post.title}}</a></h4>
 													</div>
 												</div>
 												{% endfor %}
@@ -144,7 +144,7 @@
 														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
 													</div>
 													<div class="item-content">
-														<h3><a href="post.html">{{post.title}}</a></h3>
+														<h3><a href="{% url 'post-detail' post.slug %}">{{post.title}}</a></h3>
 														<div class="item-meta">
 															<a href="#" class="item-meta-i"><i class="po po-head"></i>{{post.author}}</a>
 															<span class="item-meta-i"><i class="po po-clock"></i>{{post.datetime}}</span>
@@ -215,7 +215,7 @@
 												<div class="item item-large">
 													<div class="item-header item-header-hover">
 														<div class="item-header-hover-buttons">
-															<span data-hover-text-me="Read This Article"><a href="post.html" class="fa fa-mail-reply"></a></span>
+															<span data-hover-text-me="Read This Article"><a href="#" class="fa fa-mail-reply"></a></span>
 															<span data-hover-text-me="Add to Read Later"><a href="post.html#comments" class="fa fa-plus"></a></span>
 														</div>
 														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
@@ -226,7 +226,7 @@
 												</div>
 												{% endfor %}
 											</div>
-											<a href="blog.html" class="widget-view-more">View more articles</a>
+											<a href="#" class="widget-view-more">View more articles</a>
 
 										<!-- END .widget -->
 										</div>
@@ -259,7 +259,7 @@
 							<div class="column12">
 								<div class="portus-content-title">
 									<h2>Latest movies trailers</h2>
-									<a href="blog.html" class="right set-this-dotted">view more videos</a>
+									<a href="#" class="right set-this-dotted">view more videos</a>
 								</div>
 								<div class="portus-video-slider-min owl-carousel">
 									{% for video in videos %}
