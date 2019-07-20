@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
-from embed_video.fields import EmbedVideoField
 from django.utils import timezone
 from django.urls import reverse
 
