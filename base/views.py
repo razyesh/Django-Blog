@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post, Category, Subscribe
+from .models import Post, Category, Subscribe, Videos
 from django.views.generic import ListView, DetailView, CreateView
 from .forms import SubscribeForm
 from django.contrib import messages
@@ -21,6 +21,7 @@ class PostListView(ListView):
         context['category_computers'] = Post.objects.filter(category='4')
         context['category_gadget_review'] = Post.objects.filter(category='5')
         context['category_jobs'] = Post.objects.filter(category='6')
+        context['videos'] = Videos.objects.all()
         return context 
 
 class PostListCategories(ListView):
@@ -55,6 +56,7 @@ class PostDetail(DetailView):
         context['category_mobbiles'] = Post.objects.filter(category='3')
         context['category_computers'] = Post.objects.filter(category='4')
         context['category_gadget_review'] = Post.objects.filter(category='5')
+        context['videos'] = Videos.objects.all()
         return context 
 
 def subscribe(request):
@@ -68,4 +70,15 @@ def subscribe(request):
         form = SubscribeForm()
     
     return render(request, 'homepage/subscribe.html', {'form':form})
+
+
+class VideoListView(ListView):
+    model = Videos
+    template_name = 'homepage/video.html'
+    context_object_name = 'videos'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories']= Category.objects.all()
+        return context
 

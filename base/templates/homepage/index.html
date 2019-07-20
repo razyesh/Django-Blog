@@ -3,9 +3,6 @@
 <!DOCTYPE HTML>
 <!-- BEGIN html -->
 <html lang = "en">
-	<!-- BEGIN head -->
-	
-<!-- Mirrored from portus.orange-themes.net/html/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Jul 2019 01:31:01 GMT -->
 <head>
 		{% if title %}
 			<title>{{title}}</title>
@@ -40,18 +37,6 @@
 		<link type="text/css" rel="stylesheet" href="{% static 'css/dat-menu.min.css' %}" />
 		<link type="text/css" rel="stylesheet" href="../../fonts.googleapis.com/css810a.css?family=Open+Sans:300,400,600,700,800&amp;subset=latin,latin-ext" />
 		<link type="text/css" rel="stylesheet" href='../../fonts.googleapis.com/csse3e5.css?family=Montserrat:400,700' />
-
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
-		<!--[if lte IE 8]>
-		<link type="text/css" rel="stylesheet" href="css/ie-ancient.css" />
-		<![endif]-->
 
 		<!-- Demo Only -->
 		<link type="text/css" rel="stylesheet" href="{% static 'css/_ot-demo.min.css' %}" />
@@ -133,6 +118,7 @@
 								{% for category in categories %}
 								<li><a href="{% url 'category-posts' category.id %}">{{category}}</a></li>
 								{% endfor %}
+								<li><a href="{% url 'video' %}">Video</a></li>
 							</ul>
 							
 						<!-- END .wrapper -->
@@ -398,31 +384,27 @@
 						</div>
 					<!-- ENd .portus-main-content-panel -->
 					</div>
-
-					
-
 					<!-- BEGIN .portus-main-content-panel -->
 					<div class="paragraph-row portus-main-content-panel">
-						<div class="column12">
-							<div class="portus-content-title">
-								<h2>Latest movies trailers</h2>
-								<a href="blog.html" class="right set-this-dotted">view more videos</a>
-							</div>
-							<div class="portus-video-slider-min owl-carousel">
-
-								<div class="item">
-									<a href="post-video.html" class="item-photo">
-										<i class="fa fa-play"></i>
-										<img src="../../i.ytimg.com/vi/JVxe5NIABsI/mqdefault.jpg" alt="" />
-										<span>Ullum fabellas accommodare pro veniam ponderum</span>
-									</a>
+							<div class="column12">
+								<div class="portus-content-title">
+									<h2>Latest movies trailers</h2>
+									<a href="blog.html" class="right set-this-dotted">view more videos</a>
 								</div>
+								<div class="portus-video-slider-min owl-carousel">
+									{% for video in videos %}
+									<div class="item">
+										<a href="{{video.get_absolute_url}}" class="item-photo">
+											<img src="{{video.thumbnail.url}}" alt="">
+											<h1>{{video.title}}</h1>
+										</a>
+									</div>
+									{% endfor %}
 
-
+								</div>
 							</div>
+						<!-- ENd .portus-main-content-panel -->
 						</div>
-					<!-- ENd .portus-main-content-panel -->
-					</div>
 
 				<!-- END .wrapper -->
 				</div>

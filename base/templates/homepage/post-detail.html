@@ -256,25 +256,25 @@
 
 					<!-- BEGIN .portus-main-content-panel -->
 					<div class="paragraph-row portus-main-content-panel">
-						<div class="column12">
-							<div class="portus-content-title">
-								<h2>Latest movies trailers</h2>
-								<a href="blog.html" class="right set-this-dotted">view more videos</a>
-							</div>
-							<div class="portus-video-slider-min owl-carousel">
-
-								<div class="item">
-									<a href="post-video.html" class="item-photo">
-										<i class="fa fa-play"></i>
-										<img src="../../i.ytimg.com/vi/JVxe5NIABsI/mqdefault.jpg" alt="" />
-										<span>Ullum fabellas accommodare pro veniam ponderum</span>
-									</a>
+							<div class="column12">
+								<div class="portus-content-title">
+									<h2>Latest movies trailers</h2>
+									<a href="blog.html" class="right set-this-dotted">view more videos</a>
 								</div>
+								<div class="portus-video-slider-min owl-carousel">
+									{% for video in videos %}
+									<div class="item">
+										<a href="{{video.get_absolute_url}}" class="item-photo">
+											<img src="{{video.thumbnail.url}}" alt="">
+											<h1>{{video.title}}</h1>
+										</a>
+									</div>
+									{% endfor %}
 
+								</div>
 							</div>
+						<!-- ENd .portus-main-content-panel -->
 						</div>
-					<!-- ENd .portus-main-content-panel -->
-					</div>
 
 				<!-- END .wrapper -->
 				</div>

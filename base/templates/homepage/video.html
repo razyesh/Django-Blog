@@ -1,0 +1,25 @@
+{% extends 'homepage/index.html' %}
+{% load static %}
+{% block content %}
+<!-- BEGIN .portus-main-content-panel -->
+<div class="paragraph-row portus-main-content-panel">
+        <div class="column12">
+            <div class="portus-content-title">
+                <h2>Latest movies trailers</h2>
+                <a href="blog.html" class="right set-this-dotted">view more videos</a>
+            </div>
+            <div class="portus-video-slider-min owl-carousel">
+                {% for video in videos %}
+                <div class="item">
+                    <a href="{{video.get_absolute_url}}" class="item-photo">
+                        <img src="{{video.thumbnail.url}}" alt="">
+                        <span>{{video.title}}</span>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    <!-- ENd .portus-main-content-panel -->
+</div>
+{% endblock %}

@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 from embed_video.fields import EmbedVideoField
+from django.utils import timezone
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -37,3 +39,17 @@ class Subscribe(models.Model):
     def __str__(self):
         return self.name
 
+class Videos(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200)
+    video = RichTextUploadingField()
+    thumbnail = models.ImageField(upload_to='video/images', default='home/images/default.png')
+    publish = models.BooleanField(default=True)
+    datetime = models.DateTimeField(auto_now = True)
+
+    def __str__(self):
+        return self.title
+
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'slug':self.slug})
