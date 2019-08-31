@@ -1,0 +1,267 @@
+{% extends 'homepage/index.html' %}
+{% load static %}
+			{% block content %}
+
+					<!-- BEGIN .portus-main-content-panel -->
+					<div class="paragraph-row portus-main-content-panel">
+						<div class="column12">
+							<div class="portus-main-content-s-block">
+
+								<aside class="sidebar portus-sidebar-small">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>Nepal</h3>
+											<div class="w-article-list-num">
+												{% for category in category_nepal%}
+												<div class="item">
+														<div class="item-header">
+																<a href="{% url 'post-detail' category.slug %}"><img src="{{category.image.url}}" alt="" /></a>
+															</div>
+													<span class="item-num">01</span>
+													<div class="item-content">
+														
+														<h4><a href="{% url 'post-detail' category.slug %}">{{category.title}}</a>
+														<div class="item-meta">
+															<a href="{% url 'post-detail' category.slug %}"><i class="po po-clock"></i>{{category.datetime}}</a>
+														</div>
+														<p></p>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+									</div>
+								</aside>
+
+								<aside class="sidebar portus-sidebar-small">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>Automobile</h3>
+											<div class="w-article-list">
+												{% for post in category_automobile %}
+												<div class="item">
+													<div class="item-header">
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<div class="item-categories">
+															<a href="{% url 'post-detail' post.slug %}" data-ot-css="color: #f37326;">{{post.category}}</a>
+														</div>
+														<h4><a href="{% url 'post-detail' post.slug %}">{{post.title}}</a></h4>
+													</div>
+												</div>
+												{% endfor %}
+												
+												
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+										
+
+									</div>
+								</aside>
+
+								<!-- BEGIN .portus-main-content -->
+								<div class="portus-main-content portus-main-content-s-2">
+									<div class="theiaStickySidebar">
+										
+										<!-- BEGIN .portus-content-block -->
+										<div class="portus-content-block">
+											
+											<div class="article-grid-default">
+												
+												<div class="article-grid-layout-2">
+															{% for post in category_posts %}
+															<div class="row">
+																<div class="leftcolumn">
+																	  <div class="card">
+																		  <a href="#">
+																		<h2><a href="{% url 'post-detail' post.slug %}">{{post.title}}</h2></a>
+																		<h5>{{post.datetime}}</h5>
+																		<img src="{{post.image.url}}" alt=" "/>
+																		<p>{{post.meta_content}}</p></a>
+																	  </div>
+																	</div>
+															</div>
+															{% endfor %}
+															{% if is_paginated %}
+																{% for i in paginator.page_range%}
+																	<button><a href="?page={{i}}" style="color:red;">{{i}}</a></button>
+																{% endfor %}
+															{% endif %}
+														</div>
+														</div>
+														</div>
+											</div>
+										<!-- BEGIN .portus-content-block -->
+										</div>
+									</div>
+								<!-- END .portus-main-content -->
+								</div>
+							</div>
+						</div>
+					<!-- ENd .portus-main-content-panel -->
+					</div>
+					<!-- BEGIN .portus-main-content-panel -->
+					<div class="container">
+					<div class="paragraph-row portus-main-content-panel">
+						<div class="column12">
+							<div class="portus-main-content-s-block">
+								<!-- BEGIN .portus-main-content -->
+								<div class="portus-main-content">
+									<div class="theiaStickySidebar">	
+										<!-- BEGIN .portus-content-block -->
+										<div class="portus-content-block">
+											<div class="portus-content-title">
+												<h2>Mobbiles</h2>
+								
+											</div>
+											<div class="article-blog-default">
+												{% for post in category_mobbiles %}
+
+												<div class="item">
+													<div class="item-header item-header-hover">
+														<div class="item-header-hover-buttons">
+															<span data-hover-text-me="Read This Article"><a href="{% url 'post-detail' post.slug %}" class="fa fa-mail-reply"></a></span>
+															<span data-hover-text-me="Add to Read Later"><a href="#" class="fa fa-plus"></a></span>
+														</div>
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<h3><a href="{% url 'post-detail' post.slug %}">{{post.title}}</a></h3>
+														<div class="item-meta">
+															<a href="{% url 'post-detail' post.slug %}" class="item-meta-i"><i class="po po-head"></i>{{post.author}}</a>
+															<span class="item-meta-i"><i class="po po-clock"></i>{{post.datetime}}</span>
+
+														</div>
+														<p>{{post.meta_content}}</p>
+														<div class="item-helper-a">
+															<a href="{% url 'post-detail' post.slug %}" class="button-alt button-alt-frame"><i class="fa fa-reply"></i>Read more</a>
+															<a href="#" class="button-alt"><i class="fa fa-plus-circle"></i>Read later</a>
+														</div>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+										<!-- BEGIN .portus-content-block -->
+										</div>
+
+									</div>
+								<!-- END .portus-main-content -->
+								</div>
+
+								<aside class="sidebar portus-sidebar-small">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>PC/Laptops</h3>
+											<div class="w-article-list">
+												{% for post in category_computers %}
+												<div class="item">
+													<div class="item-header">
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<div class="item-categories">
+															<a href="{% url 'post-detail' post.slug %}" data-ot-css="color: #f37326;">{{post.category}}</a>
+														</div>
+														<h4><a href="{% url 'post-detail' post.slug %}">{{post.meta_content}}</a></h4>
+													</div>
+												</div>
+												{% endfor %}
+										<!-- END .widget -->
+										</div>
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<div class="do-space">
+												<a href="#" target="_blank"><img src="images/pob-2.jpg" alt="" /></a>
+											</div>
+
+										<!-- END .widget -->
+										</div>
+
+									</div>
+								</aside>
+
+								<aside class="sidebar portus-sidebar-large">
+									<div class="theiaStickySidebar">
+
+										<!-- BEGIN .widget -->
+										<div class="widget">
+
+											<h3>Gadget Reviews</h3>
+											<div class="w-review-articles">
+												{% for post in category_gadget_review %}
+												<div class="item item-large">
+													<div class="item-header item-header-hover">
+														<div class="item-header-hover-buttons">
+															<span data-hover-text-me="Read This Article"><a href="{% url 'post-detail' post.slug %}" class="fa fa-mail-reply"></a></span>
+															<span data-hover-text-me="Add to Read Later"><a href="post.html#comments" class="fa fa-plus"></a></span>
+														</div>
+														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
+													</div>
+													<div class="item-content">
+														<h4><a href="{% url 'post-detail' post.slug %}">{{post.title}}</a><a href="post.html#comments" class="post-title-comment"></h4>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+											
+										<!-- END .widget -->
+										</div>
+									
+										
+									</div>
+								</aside>
+
+							</div>
+						</div>
+					<!-- ENd .portus-main-content-panel -->
+					</div>
+					<!-- BEGIN .portus-main-content-panel -->
+						<!-- BEGIN .portus-main-content-panel -->
+					<div class="paragraph-row portus-main-content-panel">
+							<div class="column12">
+								<div class="portus-content-title">
+									<h2>Latest movies trailers</h2>
+									<a href="#" class="right set-this-dotted">view more videos</a>
+								</div>
+								<div class="portus-video-slider-min owl-carousel">
+									{% for video in videos %}
+									<div class="item">
+										<a href="{{video.get_absolute_url}}" class="item-photo">
+											<img src="{{video.thumbnail.url}}" alt="">
+											<h1>{{video.title}}</h1>
+										</a>
+									</div>
+									{% endfor %}
+
+								</div>
+							</div>
+						<!-- ENd .portus-main-content-panel -->
+						<!-- ENd .portus-main-content-panel -->
+						</div>
+
+				<!-- END .wrapper -->
+				</div>
+				
+			<!-- BEGIN #content -->
+			</div>
+		</div>
+			{% endblock %}
+		

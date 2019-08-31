@@ -89,19 +89,15 @@
 							<a href="#"><i class="fa fa-rss"></i><span>1.9k</span></a>
 						<!-- END .header-socials -->
 						</div>
-						<iframe src="{% url 'subscribe-form'%}" height="180px" width="500px"></iframe>
 						
-						<!-- BEGIN .header-pob -->
-						<div class="header-pob">
-							<a href="#" target="_blank"><img src="images/pob-1.jpg" alt="" /></a>
-						<!-- END .header-pob -->
-						</div>
 
 					</div>
 					
 				<!-- END .wrapper -->
 				</div>
-
+				<form action="" method="POST">
+							{{form}}
+						</form>
 
 				<!-- BEGIN #main-menu -->
 				<nav id="main-menu">
@@ -116,7 +112,7 @@
 							<ul class="load-responsive" rel="Main Menu">
 								<li><a href="{% url 'base' %}">Home</a></li>
 								{% for category in categories %}
-								<li><a href="{% url 'category-posts' category.id %}">{{category}}</a></li>
+								<li><a href="{% url 'category-posts' category.slug %}">{{category}}</a></li>
 								{% endfor %}
 								<li><a href="{% url 'video' %}">Video</a></li>
 							</ul>
@@ -200,15 +196,7 @@
 										<!-- END .widget -->
 										</div>
 
-										<!-- BEGIN .widget -->
-										<div class="widget">
-
-											<div class="do-space">
-												<a href="#" target="_blank"><img src="{% static 'images/pob-2.jpg' %}" alt=""></a>
-											</div>
-
-										<!-- END .widget -->
-										</div>
+									
 
 									</div>
 								</aside>
@@ -216,12 +204,12 @@
 								<!-- BEGIN .portus-main-content -->
 								<div class="portus-main-content portus-main-content-s-2">
 									<div class="theiaStickySidebar">
-										
 										<!-- BEGIN .portus-content-block -->
 										<div class="portus-content-block">
 											<div class="portus-content-title">
 												<h2>Latest Articles</h2>
 											</div>
+											
 											<div class="article-grid-default">
 												
 												<div class="article-grid-layout-2">
@@ -328,15 +316,7 @@
 										<!-- END .widget -->
 										</div>
 
-										<!-- BEGIN .widget -->
-										<div class="widget">
-
-											<div class="do-space">
-												<a href="#" target="_blank"><img src="images/pob-2.jpg" alt="" /></a>
-											</div>
-
-										<!-- END .widget -->
-										</div>
+										
 
 									</div>
 								</aside>
@@ -354,7 +334,7 @@
 													<div class="item-header item-header-hover">
 														<div class="item-header-hover-buttons">
 															<span data-hover-text-me="Read This Article"><a href="{% url 'post-detail' post.slug %}" class="fa fa-mail-reply"></a></span>
-															<span data-hover-text-me="Add to Read Later"><a href="post.html#comments" class="fa fa-plus"></a></span>
+															
 														</div>
 														<a href="{% url 'post-detail' post.slug %}"><img src="{{post.image.url}}" alt="" /></a>
 													</div>
@@ -367,15 +347,7 @@
 											
 										<!-- END .widget -->
 										</div>
-										<!-- BEGIN .widget -->
-										<div class="widget">
-
-											<div class="do-space">
-												<a href="#" target="_blank"><img src="images/pob-3.jpg" alt="" /></a>
-											</div>
-
-										<!-- END .widget -->
-										</div>
+										
 										
 										
 									</div>
@@ -424,16 +396,7 @@
 
 						<div class="paragraph-row">
 							<div class="column12">
-								<!-- BEGIN .widget -->
-								<div class="widget">
-
-									<div class="do-space do-space-bg">
-										<a href="#" target="_blank"><img src="images/pob-1.jpg" alt="" /></a>
-										<strong>Sponsored advertisement</strong>
-									</div>
-
-								<!-- END .widget -->
-								</div>
+								
 							</div>
 						</div>
 
@@ -442,7 +405,6 @@
 							<div class="column3">
 								<div class="widget">
 									<div>
-										<p><img src="images/footer-logo.png" data-ot-retina="images/footer-logo@2x.png" alt="" /></p>
 										<p>Contact Detail</p>
 									
 										<div class="short-icon-text">
